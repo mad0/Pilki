@@ -5,7 +5,7 @@ Item::Item() {
 	kolo.setRadius(20.0f);
 	kolo.setPointCount(20);
 	kolo.setFillColor(sf::Color::Green);
-	kolo.setPosition(700.0f,100);
+	kolo.setPosition(540.0f,231);
 
 	line1.setPrimitiveType(sf::Lines);
 	line1.append(sf::Vertex(sf::Vector2f(1000, 50), sf::Color::Red));
@@ -40,11 +40,10 @@ void Item::update() {
 }
 
 void Item::collision() {
-	sf::Vector2f poz = kolo.getPosition();
+	//sf::Vector2f poz = kolo.getPosition();
 	if ((kolo.getPosition().x > 960) || (kolo.getPosition().x<50))
 		ruch.x *= -1;
 	if ((kolo.getPosition().y > 660) || (kolo.getPosition().y<50))
 		ruch.y *= -1;
-
 	kolo.move(ruch.x, ruch.y);
 }

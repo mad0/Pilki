@@ -34,7 +34,7 @@ void Engine::update() {
 }
 
 void Engine::draw() {
-	okno.clear(sf::Color::Black);
+	okno.clear(sf::Color::Magenta);
 	okno.draw(pierwsze);
 	okno.display();
 }
