@@ -9,6 +9,15 @@ Item::Item() {
 	line1.setPrimitiveType(sf::Lines);
 	line1.append(sf::Vertex(sf::Vector2f(1000, 50), sf::Color::Red));
 	line1.append(sf::Vertex(sf::Vector2f(1000, 700), sf::Color::Yellow));
+	line2.setPrimitiveType(sf::Lines);
+	line2.append(sf::Vertex(sf::Vector2f(50, 50), sf::Color::Red));
+	line2.append(sf::Vertex(sf::Vector2f(50, 700), sf::Color::Yellow));
+	line3.setPrimitiveType(sf::Lines);
+	line3.append(sf::Vertex(sf::Vector2f(50, 50), sf::Color::Red));
+	line3.append(sf::Vertex(sf::Vector2f(1000, 50), sf::Color::Yellow));
+	line4.setPrimitiveType(sf::Lines);
+	line4.append(sf::Vertex(sf::Vector2f(50, 700), sf::Color::Red));
+	line4.append(sf::Vertex(sf::Vector2f(1000, 700), sf::Color::Yellow));
 }
 
 Item::~Item() {
@@ -18,18 +27,20 @@ Item::~Item() {
 void Item::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 	states.transform *= getTransform();
 	target.draw(line1);
+	target.draw(line2);
+	target.draw(line3);
+	target.draw(line4);
 	target.draw(kolo);
 	
 }
 
 void Item::update() {
 	collision();
-	kolo.move(1, 0);
 }
 
 void Item::collision() {
-	sf::FloatRect collKolo = kolo.getGlobalBounds();
-	sf::FloatRect collLine (1000, 50, 1, 700);
-	if (collKolo.intersects(collLine))
-		std::cout << "kolizja\n";
+	sf::Vector2f poz = kolo.getPosition();
+	
+
+	kolo.setPosition(poz.x, poz.y);
 }
