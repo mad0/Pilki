@@ -16,6 +16,8 @@ void Engine::Start() {
 		while (okno.pollEvent(zdarz)) {
 			if (zdarz.type == sf::Event::Closed)
 				okno.close();
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+				okno.close();
 		}
 		okno.clear(sf::Color::Black);
 		okno.display();
