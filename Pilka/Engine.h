@@ -5,9 +5,13 @@
 class Engine {
 private:
 	sf::RenderWindow okno;
+	Item pierwsze;
+	void draw();
+	void update();
 public:
 	Engine();
 	~Engine();
-	void Start();
+	void start();
+	
 
 };

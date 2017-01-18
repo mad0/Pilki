@@ -3,7 +3,7 @@
 int main()
 {
 	Engine run;
-	run.Start();
+	run.start();
 
 	return 0;
 }
