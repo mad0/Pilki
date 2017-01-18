@@ -6,7 +6,7 @@ private:
 	sf::CircleShape kolo;
 	sf::VertexArray line1,line2,line3,line4;
 	void collision();
-	bool coll = false;
+	sf::Vector2f ruch;
 public:
 	Item();
 	~Item();

@@ -1,6 +1,7 @@
 #include "Item.h"
 #include <iostream>
 Item::Item() {
+	ruch = sf::Vector2f(3, 3);
 	kolo.setRadius(20.0f);
 	kolo.setPointCount(20);
 	kolo.setFillColor(sf::Color::Green);
@@ -31,7 +32,7 @@ void Item::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 	target.draw(line3);
 	target.draw(line4);
 	target.draw(kolo);
-	
+
 }
 
 void Item::update() {
@@ -40,7 +41,10 @@ void Item::update() {
 
 void Item::collision() {
 	sf::Vector2f poz = kolo.getPosition();
-	
+	if ((kolo.getPosition().x > 960) || (kolo.getPosition().x<50))
+		ruch.x *= -1;
+	if ((kolo.getPosition().y > 660) || (kolo.getPosition().y<50))
+		ruch.y *= -1;
 
-	kolo.setPosition(poz.x, poz.y);
+	kolo.move(ruch.x, ruch.y);
 }
