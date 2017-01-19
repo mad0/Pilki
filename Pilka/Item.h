@@ -9,7 +9,10 @@ private:
 	sf::VertexArray line1,line2,line3,line4;
 	void collision();
 	sf::Vector2f ruch;
-	std::vector<std::unique_ptr<sf::CircleShape>> pojemnik;
+	//utworzenie pojemnika na wskazniki, dla obiektow 
+	//std::vector<std::unique_ptr<sf::CircleShape>> pojemnik;
+	//utworzenie jednego pustego wskaznika;
+	std::unique_ptr<sf::CircleShape>poje;
 public:
 	Item();
 	~Item();
