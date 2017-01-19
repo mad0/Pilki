@@ -30,11 +30,9 @@ void Engine::start() {
 }
 
 void Engine::update() {
-	pierwsze.update();
 }
 
 void Engine::draw() {
 	okno.clear(sf::Color::Black);
-	okno.draw(pierwsze);
 	okno.display();
 }

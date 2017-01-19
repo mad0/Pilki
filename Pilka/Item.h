@@ -10,12 +10,14 @@ private:
 	void collision();
 	sf::Vector2f ruch;
 	//utworzenie pojemnika na wskazniki, dla obiektow 
-	std::vector<std::unique_ptr<sf::CircleShape>> pojemnik;
+	//std::vector<std::unique_ptr<sf::CircleShape>> pojemnik;
 	//utworzenie jednego pustego wskaznika;
-	//std::unique_ptr<sf::CircleShape>poje;
+	std::unique_ptr<sf::CircleShape>poje;
 public:
 	Item();
 	~Item();
 	void update();
+
+	
 
 };

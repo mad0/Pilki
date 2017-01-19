@@ -5,9 +5,9 @@
 class Engine {
 private:
 	sf::RenderWindow okno;
-	Item pierwsze;
 	void draw();
 	void update();
+	std::vector<std::unique_ptr<Item>> pojemnik;
 public:
 	Engine();
 	~Engine();
