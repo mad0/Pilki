@@ -3,7 +3,8 @@
 Item::Item() {
 	ruch = sf::Vector2f(3, 3);
 
-	pojemnik.emplace_back(std::make_unique<sf::CircleShape>());
+	//pojemnik.push_back(std::make_unique<sf::CircleShape>());
+	pojemnik.push_back(std::unique_ptr<sf::CircleShape>(new sf::CircleShape()));
 	std::cout<<"Ilosc obiektow w kontenerze: "<<pojemnik.size()<<"\n";
 	pojemnik[0]->setRadius(20.0f);
 	pojemnik[0]->setPointCount(20);
@@ -25,6 +26,7 @@ Item::Item() {
 }
 
 Item::~Item() {
+	pojemnik.erase(pojemnik.end() - 1);
 	//pojemnik.clear();
 	std::cout << "Ilosc obiektow w kontenerze: " << pojemnik.size() << "\n";
 }
