@@ -1,21 +1,26 @@
 #include "Item.h"
 #include <iostream>
+int Item::ile = 0;
 Item::Item() {
+	ile++;
+	std::cout << ile << "\n";
+	pozx = (rand() % 984) + 40;
+	pozy = (rand() % 728) + 40;
 	ruch = sf::Vector2f(3, 3);
 	//pojemnik.push_back(std::make_unique<sf::CircleShape>());
 	//pojemnik.push_back(std::unique_ptr<sf::CircleShape>(new sf::CircleShape()));
 	//utowrzenie wskaznika do obiektu o nazwie poje2
 	//std::unique_ptr<sf::CircleShape>poje2(new sf::CircleShape);
 	//inicjalizacja wczesniej utworzonego wskaznika
-	poje = std::unique_ptr<sf::CircleShape>(new sf::CircleShape);
-	poje->setRadius(20.0f);
-	poje->setPointCount(20);
-	poje->setFillColor(sf::Color::Green);
-	poje->setPosition(540.0f,231);
-	poje->setRadius(20.0f);
-	poje->setPointCount(20);
-	poje->setFillColor(sf::Color::Green);
-	poje->setPosition(600.0f, 400);
+	//kula = std::unique_ptr<sf::CircleShape>(new sf::CircleShape);
+	kula.setRadius(20.0f);
+	kula.setPointCount(20);
+	kula.setFillColor(sf::Color::Green);
+	kula.setPosition(540.0f,231);
+	kula.setRadius(20.0f);
+	kula.setPointCount(20);
+	kula.setFillColor(sf::Color::Green);
+	kula.setPosition(pozx,pozy);
 	
 	/*poje->setRadius(20.0f);
 	poje->setPointCount(20);
@@ -51,16 +56,16 @@ void Item::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 	target.draw(line3);
 	target.draw(line4);
 	*/
-	target.draw(*poje);
+	target.draw(kula,states);
 }
 
 void Item::update() {
 }
 
 void Item::collision() {
-		if ((poje->getPosition().x > 960) || (poje->getPosition().x<50))
+		if ((kula.getPosition().x > 960) || (kula.getPosition().x<50))
 			ruch.x *= -1;
-		if ((poje->getPosition().y > 660) || (poje->getPosition().y<50))
+		if ((kula.getPosition().y > 660) || (kula.getPosition().y<50))
 			ruch.y *= -1;
-		poje->move(ruch.x, ruch.y);
+		kula.move(ruch.x, ruch.y);
 }

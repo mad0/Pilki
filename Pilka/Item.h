@@ -5,19 +5,19 @@
 class Item: public sf::Drawable, sf::Transformable{
 private:
 	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
-	sf::CircleShape kolo;
 	sf::VertexArray line1,line2,line3,line4;
-	void collision();
 	sf::Vector2f ruch;
 	//utworzenie pojemnika na wskazniki, dla obiektow 
 	//std::vector<std::unique_ptr<sf::CircleShape>> pojemnik;
 	//utworzenie jednego pustego wskaznika;
-	std::unique_ptr<sf::CircleShape>poje;
+	//std::unique_ptr<sf::CircleShape>poje;
+	sf::CircleShape kula;
+	float pozx,pozy;
+	static int ile;
 public:
+	
 	Item();
 	~Item();
 	void update();
-
-	
-
+	void collision();
 };
