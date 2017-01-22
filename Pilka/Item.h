@@ -12,7 +12,6 @@ private:
 	//utworzenie jednego pustego wskaznika;
 	//std::unique_ptr<sf::CircleShape>poje;
 	sf::CircleShape kula;
-	float pozx,pozy;
 	static int ile;
 public:
 	
