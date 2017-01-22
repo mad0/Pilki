@@ -30,9 +30,9 @@ void Engine::start() {
 				okno.close();
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 				okno.close();
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+			if ((zdarz.type == sf::Event::KeyReleased) && (zdarz.key.code = sf::Keyboard::D)) {
 				std::cout << pojemnik.size() << "\n";
-				pojemnik.clear();
+				pojemnik.erase(pojemnik.begin());
 			}
 		}
 		
@@ -40,7 +40,7 @@ void Engine::start() {
 		update();
 		okno.clear(sf::Color::Black);
 		if (pojemnik.size() > 0) {
-			for (int x = 0; x<300; x++)
+			for (int x = 0; x<250; x++)
 				okno.draw(*pojemnik[x]);
 		}
 		
@@ -52,7 +52,7 @@ void Engine::start() {
 }
 
 void Engine::update() {
-	for (int x = 0; x < 300; x++)
+	for (int x = 0; x < 250; x++)
 		pojemnik[x]->collision();
 }
 
