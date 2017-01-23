@@ -32,7 +32,8 @@ void Engine::start() {
 				okno.close();
 			if ((zdarz.type == sf::Event::KeyReleased) && (zdarz.key.code = sf::Keyboard::D)) {
 				std::cout << pojemnik.size() << "\n";
-				pojemnik.erase(pojemnik.begin());
+				if (pojemnik.size()>0)
+					pojemnik.erase(pojemnik.begin());
 			}
 		}
 		
