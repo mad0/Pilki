@@ -46,6 +46,7 @@ Item::~Item() {
 	//pojemnik.erase(pojemnik.end() - 1);
 	//pojemnik.clear();
 	//std::cout << "Ilosc obiektow w kontenerze: " << pojemnik.size() << "\n";
+	std::cout << "Obiekt usuniety...\n";
 }
 
 void Item::draw(sf::RenderTarget &target, sf::RenderStates states) const {
