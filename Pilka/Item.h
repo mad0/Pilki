@@ -11,6 +11,7 @@ private:
 	//std::vector<std::unique_ptr<sf::CircleShape>> pojemnik;
 	//utworzenie jednego pustego wskaznika;
 	//std::unique_ptr<sf::CircleShape>poje;
+	int pozx;
 	sf::CircleShape kula;
 	static int ile;
 public:

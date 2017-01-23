@@ -4,7 +4,7 @@ int Item::ile = 0;
 Item::Item() {
 	//ile++;
 	//std::cout << ile << "\n";
-	//pozx = (rand() % 984) + 40;
+	pozx = (rand() % 984) + 40;
 	ruch = sf::Vector2f(3, 3);
 	//pojemnik.push_back(std::make_unique<sf::CircleShape>());
 	//pojemnik.push_back(std::unique_ptr<sf::CircleShape>(new sf::CircleShape()));
@@ -19,7 +19,7 @@ Item::Item() {
 	kula.setRadius(20.0f);
 	kula.setPointCount(20);
 	kula.setFillColor(sf::Color::Green);
-	kula.setPosition(200,200);
+	kula.setPosition(pozx,200);
 	
 	/*poje->setRadius(20.0f);
 	poje->setPointCount(20);
