@@ -9,7 +9,7 @@ Engine::Engine() {
 	okno.create(sf::VideoMode(1024,768),"Pilki...", sf::Style::Default, settings);
 	okno.setFramerateLimit(60);
 	okno.setVerticalSyncEnabled(true);
-	for (int x = 0; x < 300; x++) {
+	for (int x = 0; x < 10; x++) {
 		pojemnik.push_back(std::unique_ptr<Item>(new Item));
 	}
 	
@@ -40,7 +40,7 @@ void Engine::start() {
 		update();
 		okno.clear(sf::Color::Black);
 		if (pojemnik.size() > 0) {
-			for (int x = 0; x<250; x++)
+			for (int x = 0; x<pojemnik.size(); x++)
 				okno.draw(*pojemnik[x]);
 		}
 		
@@ -52,13 +52,13 @@ void Engine::start() {
 }
 
 void Engine::update() {
-	for (int x = 0; x < 250; x++)
+	for (int x = 0; x < pojemnik.size(); x++)
 		pojemnik[x]->collision();
 }
 
 void Engine::draw() {
 	okno.clear(sf::Color::Black);
-	//for (int x=0;x<30;x++)
-	//	okno.draw(*pojemnik[x]);
+	for (int x=0;x<pojemnik.size();x++)
+		okno.draw(*pojemnik[x]);
 	okno.display();
 }
