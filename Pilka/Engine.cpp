@@ -9,11 +9,6 @@ Engine::Engine() {
 	okno.create(sf::VideoMode(1024,768),"Pilki...", sf::Style::Default, settings);
 	okno.setFramerateLimit(60);
 	okno.setVerticalSyncEnabled(true);
-	for (int x = 0; x < 1; x++) {
-		pojemnik.push_back(std::unique_ptr<Item>(new Item));
-	}
-	
-	std::cout << pojemnik.size()<< "\n";
 }
 Engine::~Engine(){
 	std::cout << "Engine stop...\n";

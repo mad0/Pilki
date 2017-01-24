@@ -5,7 +5,9 @@ Item::Item() {
 	//ile++;
 	//std::cout << ile << "\n";
 	pozx = (rand() % 984) + 40;
+	pozy = (rand() % 728) + 40;
 	ruch = sf::Vector2f(3, 3);
+		
 	//pojemnik.push_back(std::make_unique<sf::CircleShape>());
 	//pojemnik.push_back(std::unique_ptr<sf::CircleShape>(new sf::CircleShape()));
 	//utowrzenie wskaznika do obiektu o nazwie poje2
@@ -51,11 +53,6 @@ Item::~Item() {
 
 void Item::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 	states.transform *= getTransform();
-	/*target.draw(line1);
-	target.draw(line2);
-	target.draw(line3);
-	target.draw(line4);
-	*/
 	target.draw(kula,states);
 }
 
