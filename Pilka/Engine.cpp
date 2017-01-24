@@ -51,13 +51,13 @@ void Engine::start() {
 }
 
 void Engine::update() {
-	for (int x = 0; x < pojemnik.size(); x++)
-		pojemnik[x]->collision();
+	for (auto& p : pojemnik)
+		p->collision();
 }
 
 void Engine::draw() {
 	okno.clear(sf::Color::Black);
-		for (int x = 0; x<pojemnik.size(); x++)
-			okno.draw(*pojemnik[x]);
+	for (auto& d : pojemnik)
+		okno.draw(*d);
 	okno.display();
 }
